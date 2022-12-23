@@ -55,3 +55,20 @@
     padding: .75em 1em;
     border-radius: 10px;
 }
+.createandgreeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 15em;
+    gap: 1em;
+}
+.createpost {
+    border: aqua solid 2px;
+    padding: .75em 1em;
+    border-radius: 10px;
+    color: aqua;
+}
+.greeting {
+    color: aqua;
+}
