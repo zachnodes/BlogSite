@@ -1,9 +1,9 @@
-import appstyle from './styles/App.module.css'
+
+import Home from './comps/home';
 function App() {
   return (
-    <div className={appstyle.app}>
-    
-
+    <div >
+      <Home/>
     </div>
   );
 }
