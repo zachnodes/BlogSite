@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formcont {
+    background-color: aqua;
+    width: 30%;
+    padding: 2em;
+    border-radius: 5px;
+    border: solid black 1px;
+}
+.formcont input {
+    border: none;
+    border-bottom: solid black 1px;
+    margin-bottom: 1em;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+}
+
+.regcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.regbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.regbtn button {
+    padding: 0.5em 1em;
+    border: none;
+}
