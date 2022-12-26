@@ -5,11 +5,12 @@ import Navbar from './navbar';
 import Register from './register';
 import regstyles from '../styles/Register.module.css'
 import Signin from './signin';
+import Createpost from './newpost';
 
 const Home = () => {
     return (
         <div>
-        
+            <Navbar/>
             {/* <div className={regstyles.regcont}>
                 <Signin/>
                 <Register/>

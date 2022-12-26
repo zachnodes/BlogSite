@@ -3,6 +3,23 @@
     justify-content: center;
     align-items: center;
 }
+.createpost {
+    background-color: greenyellow;
+    width: 30%;
+    padding: 2em;
+    border-radius: 5px;
+    border: solid black 1px;
+}
+.createpost input {
+    margin-bottom: 1em;
+    width: 100%;
+    outline: none;
+}
+.createpost textarea {
+  width: 100%;
+  height: 4em;
+  resize: vertical;
+}
 .formcont {
     background-color: aqua;
     width: 30%;
@@ -18,7 +35,6 @@
     width: 100%;
     outline: none;
 }
-
 .regcont {
     display: flex;
     justify-content: center;

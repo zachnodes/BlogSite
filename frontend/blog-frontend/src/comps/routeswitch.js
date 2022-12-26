@@ -4,14 +4,16 @@ import Home from './home';
 import App from '../App';
 import Register from './register';
 import Signin from './signin';
+import Newpost from './newpost';
 
 const Routeswitch = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<App/>}/>
+                <Route path='/articles' element={<Home/>}/>
                 <Route path='/register' element={<Register/>}/>
                 <Route path='/signin' element={<Signin/>}/>
+                <Route path='/articles/new' element={<Newpost/>}/>
             </Routes>
 
         </BrowserRouter>
