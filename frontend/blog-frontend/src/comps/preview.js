@@ -1,13 +1,17 @@
 import React from 'react';
 import previewStyle from '../styles/Preview.module.css'
-const Preview = () => {
+import {useParams, BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+const Preview = ({title, descrip, date, id}) => {
+    
+    
     return (
         <div className={previewStyle.card}>
-            <h2>This is a test title</h2>
-            <p>12/12/2022</p>
-            <p>Tag</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            </p>
+            <h2>{title}</h2>
+            <p>{date.toLocaleString()}</p>
+            <p>{descrip}</p>
+            <div>
+                <Link to={`/articles/${id}`}>Read More</Link>
+            </div>
         </div>
     );
 }

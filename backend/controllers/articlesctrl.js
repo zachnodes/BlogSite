@@ -14,6 +14,30 @@ const createPost = async (req, res) => {
 
 }
 
+// get all posts and preview them
+const getPost = async (req, res) => {
+    try {
+        const articles = await Post.find({}).sort({createdAt: -1})
+        res.status(200).json(articles)
+    } catch (e) {
+        res.status(400).json({e: e.message})
+    }
+}
+
+// get single post for viewing
+const getSinglePost = async (req, res) => {
+    const {id} = req.params
+    try {
+        const singlePost = await Post.findById({_id: id})
+        res.status(200).json(singlePost)
+
+    } catch (e) {
+        res.status(400).json({e: e.message})
+    }
+}
+
 module.exports = {
-    createPost
+    createPost,
+    getPost,
+    getSinglePost
 }
