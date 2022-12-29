@@ -8,6 +8,6 @@ router.post('/new', createPost)
 router.get('/', getPost)
 
 // get single article
-router.get('/:id', getSinglePost)
+router.get('/:slug', getSinglePost)
 
 module.exports = router

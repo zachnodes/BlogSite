@@ -1,4 +1,5 @@
 import {React, useState} from 'react';
+import {Link} from 'react-router-dom'
 import regstyles from '../styles/Register.module.css'
 import Navbar from './navbar';
 
@@ -20,12 +21,30 @@ const Newpost = () => {
         })
 
     }
+
+    const createPost = async () => {
+        const res = await fetch('/articles/new', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(article)
+        })
+
+        const json = await res.json()
+
+        if (res.ok) {
+
+        }
+        
+    }
+
     return (
         <div>
             <Navbar/>
             <div className={regstyles.wrapper}>
                 <div className={regstyles.createpost}>
-                    <form>
+                    <form >
 
                         <div>
                             <div>
@@ -53,7 +72,7 @@ const Newpost = () => {
                         </div>
 
                         <div>
-                            <button>Submit</button>
+                            <button onClick={() => createPost()}>Submit</button>
                         </div>
 
                     </form>

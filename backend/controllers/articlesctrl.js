@@ -26,9 +26,9 @@ const getPost = async (req, res) => {
 
 // get single post for viewing
 const getSinglePost = async (req, res) => {
-    const {id} = req.params
+    const {slug} = req.params
     try {
-        const singlePost = await Post.findById({_id: id})
+        const singlePost = await Post.findOne({slug: slug})
         res.status(200).json(singlePost)
 
     } catch (e) {

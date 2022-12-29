@@ -30,6 +30,7 @@ function App() {
       <div className={appStyles.cardcont}>
         {
           blogPosts.map(post => {
+            post.createdAt = new Date
             return (
               <div key={post._id}>
                 <Preview
@@ -37,6 +38,7 @@ function App() {
                   descrip={post.description}
                   date={post.createdAt}
                   id={post._id}
+                  slug={post.slug}
                 />
               </div>
             )
