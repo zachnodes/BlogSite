@@ -37,7 +37,6 @@ function App() {
                   title={post.title}
                   descrip={post.description}
                   date={post.createdAt}
-                  id={post._id}
                   slug={post.slug}
                 />
               </div>

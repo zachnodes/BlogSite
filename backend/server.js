@@ -4,7 +4,8 @@ const uri = process.env.MONGO_URI
 
 const express = require('express')
 const mongoose = require('mongoose')
-const articleRoute = require('./routes/posts')
+const articleRoute = require('./routes/postsroute')
+const authRoute = require('./routes/userroute')
 mongoose.set("strictQuery", false)
 
 
@@ -13,6 +14,7 @@ const app = express()
 
 app.use(express.json())
 app.use('/articles', articleRoute)
+app.use('/auth', authRoute)
 
 // db connection 
 mongoose.connect(uri)

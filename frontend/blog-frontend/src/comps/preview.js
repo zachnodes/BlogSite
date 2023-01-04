@@ -1,7 +1,7 @@
 import React from 'react';
 import previewStyle from '../styles/Preview.module.css'
 import {Link} from 'react-router-dom'
-const Preview = ({title, descrip, date, id, slug}) => {
+const Preview = ({title, descrip, date, slug}) => {
     
     
     return (

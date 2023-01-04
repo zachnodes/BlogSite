@@ -10,14 +10,14 @@ const Register = () => {
                      <div className={regstyles.formcont}>
                         <form action="">
 
-                            <div>
+                            {/* <div>
                                 <div>
                                     <label htmlFor="">First Name</label>
                                 </div>
                                 <div>
                                     <input type="text" />
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div>
                                 <div>
