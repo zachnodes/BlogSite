@@ -9,10 +9,13 @@ const user = new Schema({
     password: {type: String, required: true}
 })
 
-user.statics.signup = async function(username, email, password) {
+user.statics.signup = async function(username, email, password, confirm) {
     // validate user
     if (!username || !email || !password) {
         throw Error("All fields must be filled")
+    }
+    if (password !== confirm) {
+        throw Error("Passwords do not match")
     }
 
     if (!validator.isEmail(email)) {
