@@ -19,6 +19,7 @@ const Viewpost = () => {
     }
     useEffect(() => {
         getPost()
+        console.log(slug)
  
     }, []);
     

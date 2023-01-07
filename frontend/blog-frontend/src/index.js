@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import Routeswitch from './comps/routeswitch'
 import {AuthContextProvider} from './context/authcontext'
+import { PostContextProvider } from './context/postscontext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <Routeswitch/>
+      <PostContextProvider>
+        <App/>
+      </PostContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );

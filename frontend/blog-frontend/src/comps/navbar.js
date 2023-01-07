@@ -31,7 +31,9 @@ const Navbar = () => {
                 <Link to={'/new'}>
                     <div className={navbar.createpost}>Create Post</div>
                 </Link>
+                <Link to={`/${signin.username}`}>
                     <div className={navbar.createpost}>Profile</div>
+                </Link>
                     <div className={navbar.createpost} onClick={() => logout()}>Log out</div>
                     <div className={navbar.greeting}>Hello {signin && signin.username} </div>
                 </div>

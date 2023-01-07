@@ -2,13 +2,18 @@ import {React, useState} from 'react';
 import {Link} from 'react-router-dom'
 import regstyles from '../styles/Register.module.css'
 import Navbar from './navbar';
+import {useAuthContext} from '../hooks/useAuthContext'
+import {usePostContext} from '../hooks/usePostContext'
 
 const Newpost = () => {
+    const {user} = useAuthContext()
+    const {posts, dispatch} = usePostContext()
     const [article, setarticle] = useState({
         title: '',
         description: '',
         content: ''
     });
+
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -23,10 +28,12 @@ const Newpost = () => {
     }
 
     const createPost = async () => {
+        // must be an authorized request
         const res = await fetch('/articles/new', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             },
             body: JSON.stringify(article)
         })
@@ -35,6 +42,9 @@ const Newpost = () => {
 
         if (res.ok) {
 
+        }
+        if (!res.ok) {
+            console.log(json.error)
         }
         
     }

@@ -1,53 +1,33 @@
-import {React, useState, useEffect} from 'react';
-import Navbar from './comps/navbar';
-import Preview from './comps/preview';
-import appStyles from './styles/Home.module.css'
+import {React} from 'react';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import Home from './pages/home'
+import Profile from './pages/profile'
+import Register from './comps/register';
+import Signin from './comps/signin';
+import Newpost from './comps/newpost';
+import Viewpost from './comps/viewpost';
+import { useAuthContext } from './hooks/useAuthContext';
 
 
 function App() {
-  const [blogPosts, setblogPosts] = useState([]);
 
-  const getPosts = async () => {
-    const res = await fetch('/articles')
-    const json = await res.json()
-
-    if (res.ok) {
-      console.log(res)
-      setblogPosts(json)
-    }
-
-  }
-  
-  useEffect(() => {
-    getPosts()
-
-  }, []);
-
-
+  const {user} = useAuthContext()
   return (
-    <div>
-      <Navbar/>
-      <div className={appStyles.cardcont}>
-        {
-          blogPosts.map(post => {
-            post.createdAt = new Date
-            return (
-              <div key={post._id}>
-                <Preview
-                  title={post.title}
-                  descrip={post.description}
-                  date={post.createdAt}
-                  slug={post.slug}
-                />
-              </div>
-            )
-          })
-        }
+      <BrowserRouter>
+          <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/:username' element={user ? <Profile/> : <Navigate to={'/'}/>}/>
+              <Route path='/register' element={user ? <Navigate to={'/'}/> : <Register/>}/>
+              <Route path='/signin' element={user ? <Navigate to={'/'}/> : <Signin/>}/>
+              <Route path='/new' element={user ? <Newpost/> : <Navigate to={'/'}/>}/>
+              <Route path='/articles/:slug' element={<Viewpost/>}/>
+          </Routes>
 
-      </div>
-      
-    </div>
+      </BrowserRouter>
+
   );
+
+
 }
 
 export default App;

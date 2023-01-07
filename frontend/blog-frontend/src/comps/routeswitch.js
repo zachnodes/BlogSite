@@ -1,6 +1,7 @@
 import {React} from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import App from '../App';
+import Home from '../pages/home'
 import Register from './register';
 import Signin from './signin';
 import Newpost from './newpost';
@@ -12,7 +13,7 @@ const Routeswitch = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<App/>} />
+                <Route path='/' element={<Home/>} />
                 <Route path='/register' element={user ? <Navigate to={'/'}/> : <Register/>}/>
                 <Route path='/signin' element={user ? <Navigate to={'/'}/> : <Signin/>}/>
                 <Route path='/new' element={user ? <Newpost/> : <Navigate to={'/'}/>}/>
