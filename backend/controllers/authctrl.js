@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 
 // sign token
 const createToken = (_id) => {
-    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
+    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '2h'})
 }
 
 // Register User
@@ -16,7 +16,7 @@ const registerUser = async (req, res) => {
         const user = await User.signup(username, email, password, confirm)
         // Create JWT
         const token = createToken(user._id)
-        res.status(200).json({user, token})
+        res.status(200).json({username, token})
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -30,7 +30,7 @@ const loginUser = async (req, res) => {
         const user = await User.login(username, password)
         // Create JWT
         const token = createToken(user._id)
-        res.status(200).json({user, token})
+        res.status(200).json({username, token})
     } catch (error) {
         res.status(400).json({error: error.message})
     }
