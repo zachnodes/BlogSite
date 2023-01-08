@@ -6,6 +6,7 @@ import Register from './comps/register';
 import Signin from './comps/signin';
 import Newpost from './comps/newpost';
 import Viewpost from './comps/viewpost';
+import Editpost from './comps/editpost';
 import { useAuthContext } from './hooks/useAuthContext';
 
 
@@ -21,6 +22,7 @@ function App() {
               <Route path='/signin' element={user ? <Navigate to={'/'}/> : <Signin/>}/>
               <Route path='/new' element={user ? <Newpost/> : <Navigate to={'/'}/>}/>
               <Route path='/articles/:slug' element={<Viewpost/>}/>
+              <Route path='/articles/edit/:slug' element={user ? <Editpost/> : <Navigate to={'/'}/>}/>
           </Routes>
 
       </BrowserRouter>

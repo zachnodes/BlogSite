@@ -5,9 +5,7 @@ import {useAuthContext} from '../hooks/useAuthContext'
 import {usePostContext} from '../hooks/usePostContext'
 import {useParams, Navigate, redirect} from 'react-router-dom'
 
-
-
-const Newpost = () => {
+const Editpost = () => {
     const {slug} = useParams()
     const {user} = useAuthContext()
     const {posts, dispatch} = usePostContext()
@@ -51,11 +49,10 @@ const Newpost = () => {
         })
 
     }
-
-    const createPost = async () => {
+    const editPost = async () => {
         // must be an authorized request
-        const res = await fetch('/articles/new', {
-            method: 'POST',
+        const res = await fetch('/articles/edit/' + slug, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
@@ -66,8 +63,7 @@ const Newpost = () => {
         const json = await res.json()
 
         if (res.ok) {
-            setnav(true)
-
+            
         }
         if (!res.ok) {
             console.log(json.error)
@@ -108,7 +104,7 @@ const Newpost = () => {
                         </div>
 
                         <div>
-                        <button onClick={() => createPost()}>Submit</button> 
+                        <button onClick={() => editPost()}>Re-Submit</button> 
                             
                         </div>
 
@@ -118,5 +114,6 @@ const Newpost = () => {
         </div>
     );
 }
+ 
 
-export default Newpost;
+export default Editpost;

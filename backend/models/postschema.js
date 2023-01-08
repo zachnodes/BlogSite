@@ -13,7 +13,8 @@ const postShema = new Schema({
     content: {type: String, required: true},
     createdAt: {type: Date, default: Date.now},
     slug: {type: String, required: true, unique: true},
-    markdown: {type: String, required: true}
+    user_id: {type: String, required: true}
+    
 })
 
 postShema.pre('validate', function (next) {

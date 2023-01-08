@@ -10,21 +10,21 @@ const Profile = () => {
     const {user} = useAuthContext()
     const {username} = useParams()
     useEffect(() => {
-        const loggedInUser = JSON.parse(localStorage.getItem('user'))
-       const getPosts = async () => {
-            const res = await fetch('/profile/' + username, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user.token}`
-                },
-            })
-            const json = await res.json()
+      const getPosts = async () => {
+        const res = await fetch('/profile/' + username, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            },
+        })
+
+        const json = await res.json()
         
-            if (res.ok) {
-              dispatch({type: 'GET_POSTS', payload: json})
-            }
+        if (res.ok) {
+          dispatch({type: 'GET_POSTS', payload: json})
+        }
         
-          }
+      }
           getPosts() 
           
     }, []);
@@ -43,6 +43,8 @@ const Profile = () => {
                   descrip={post.description}
                   date={post.createdAt}
                   slug={post.slug}
+                  userID={post.user_id}
+                  postID={post._id}
                 />
               </div>
             )

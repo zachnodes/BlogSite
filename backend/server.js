@@ -6,6 +6,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const articleRoute = require('./routes/postsroute')
 const authRoute = require('./routes/userroute')
+const profileRoute = require('./routes/profileroute')
 mongoose.set("strictQuery", false)
 
 
@@ -15,6 +16,7 @@ const app = express()
 app.use(express.json())
 app.use('/articles', articleRoute)
 app.use('/auth', authRoute)
+app.use('/profile', profileRoute)
 
 // db connection 
 mongoose.connect(uri)

@@ -16,7 +16,7 @@ const registerUser = async (req, res) => {
         const user = await User.signup(username, email, password, confirm)
         // Create JWT
         const token = createToken(user._id)
-        res.status(200).json({username, token})
+        res.status(200).json({username, token, userID: user._id})
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -30,7 +30,7 @@ const loginUser = async (req, res) => {
         const user = await User.login(username, password)
         // Create JWT
         const token = createToken(user._id)
-        res.status(200).json({username, token})
+        res.status(200).json({username, token, userID: user._id})
     } catch (error) {
         res.status(400).json({error: error.message})
     }
