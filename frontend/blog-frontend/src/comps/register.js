@@ -68,7 +68,7 @@ const Register = () => {
                                     <label htmlFor="password">Password</label>
                                 </div>
                                 <div>
-                                    <input type="text" name='password' value={form.password} onChange={handleChange}/>
+                                    <input type="password" name='password' value={form.password} onChange={handleChange}/>
                                 </div>
                             </div>
                             <div>
@@ -76,7 +76,7 @@ const Register = () => {
                                     <label htmlFor="confirm">Confirm password</label>
                                 </div>
                                 <div>
-                                    <input type="text" name='confirm' value={form.confirm} onChange={handleChange} />
+                                    <input type="password" name='confirm' value={form.confirm} onChange={handleChange} />
                                 </div>
                             </div>
                 

@@ -2,6 +2,7 @@ import {React, useState, useEffect} from 'react';
 import Navbar from './navbar';
 import {useParams} from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import Blog from '../styles/Blog.module.css'
 
 
 const Viewpost = () => {
@@ -26,24 +27,28 @@ const Viewpost = () => {
     return (
         <div>
             <Navbar/>
-            {
-                posts.map((post) => {
-                    post.createdAt = new Date
-                    return (
-                        <div>
-                            <div>
-                                <h1>{post.title}</h1>
-                                <p>{post.createdAt.toLocaleDateString()}</p>
+            <div >
+                {
+                    posts.map((post) => {
+                        post.createdAt = new Date
+                        return (
+                            <div className={Blog.wrapper}>
+                                <div className={Blog.content}>
+                                <div className={Blog.inner}>
+                                        <h1>{post.title} ****</h1>
+                                        <p id={Blog.dateandtitle}>{post.createdAt.toLocaleDateString()}</p>
+                                
+                                    
+                                        <ReactMarkdown>
+                                            {post.content}
+                                        </ReactMarkdown>
+                                </div>
+                                </div>
                             </div>
-                            <div>
-                            <ReactMarkdown>
-                                {post.content}
-                            </ReactMarkdown>
-                            </div>
-                        </div>
-                    )
-                })
-            }
+                        )
+                    })
+                }
+            </div>
         </div>
     );
 }

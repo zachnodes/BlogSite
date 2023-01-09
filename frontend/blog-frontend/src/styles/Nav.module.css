@@ -1,12 +1,13 @@
 .navbar {
     position: relative;
-    background-color: purple;
+    background-color: #6994fa;
     height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     margin: 0 0 3em 0;
+    border-bottom: solid #dce5f5 2px;
 }
 .logoandsearch {
     display: flex;
@@ -18,6 +19,14 @@
 }
 .logo {
     font-size: 2em;
+}
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+.logo a:hover {
+    text-decoration: none;
+    color: #dce5f5;
 }
 .searchbar {
     display: flex;
@@ -44,31 +53,51 @@
     height: 100%;
     width: 15em;
 }
+.registerandsignin a {
+    text-decoration: none;
+}
 .register {
-    border: aqua solid 2px;
+    border: #dce5f5 solid 2px;
     padding: .75em 1em;
     border-radius: 10px;
-    color: aqua;
+    color: #dce5f5;
+}
+.register a {
+    color: #dce5f5;
 }
 .signin {
-    background-color: aqua;
+    background-color: #dce5f5;
     padding: .75em 1em;
     border-radius: 10px;
+    color: #6994fa;
+}
+.signin a {
+    color: #6994fa;
 }
 .createandgreeting {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80%;
-    width: 20%;
-    gap: 1em;
+    width: 25%;
+    gap: 0.5em;
 }
 .createpost {
-    border: aqua solid 2px;
+    border: #dce5f5 solid 2px;
     padding: .75em 1em;
     border-radius: 10px;
-    color: aqua;
+}
+#logout {
+    border: #dce5f5 solid 2px;
+    padding: .75em 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #dce5f5;
+}
+.createpost a {
+    text-decoration: none;
+    color: #dce5f5
 }
 .greeting {
-    color: aqua;
+    color: #dce5f5
 }

@@ -18,28 +18,6 @@ const Newpost = () => {
         content: ''
     });
 
-    useEffect(() => {
-        if (!slug) {
-            console.log('noslug')
-        }
-        const getPost = async () => {
-            const res = await fetch('/articles/' + slug)
-            const json = await res.json()
-    
-            if (res.ok) {
-                setarticle({
-                    title: json.title,
-                    description: json.description,
-                    content: json.content
-                })
-                
-            }
-        }
-        getPost()
-
-      
-    }, []);
-
     const handleChange = (e) => {
         const name = e.target.name
         const value = e.target.value

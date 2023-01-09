@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import Navbar from '../comps/navbar';
 import Preview from '../comps/preview';
-import appStyles from '../styles/Home.module.css'
+import home from '../styles/Home.module.css'
 import { usePostContext } from '../hooks/usePostContext';
 
 
@@ -26,9 +26,9 @@ const Home = () => {
   
 
   return (
-    <div>
+    <div >
       <Navbar/>
-      <div className={appStyles.cardcont}>
+      <div className={home.cardwrapper}>
         {
           posts && posts.map(post => {
             post.createdAt = new Date

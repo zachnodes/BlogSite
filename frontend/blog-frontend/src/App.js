@@ -1,5 +1,6 @@
 import {React} from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import app from './styles/Home.module.css'
 import Home from './pages/home'
 import Profile from './pages/profile'
 import Register from './comps/register';
@@ -14,6 +15,7 @@ function App() {
 
   const {user} = useAuthContext()
   return (
+    <div className={app.background}>
       <BrowserRouter>
           <Routes>
               <Route path='/' element={<Home/>} />
@@ -24,8 +26,8 @@ function App() {
               <Route path='/articles/:slug' element={<Viewpost/>}/>
               <Route path='/articles/edit/:slug' element={user ? <Editpost/> : <Navigate to={'/'}/>}/>
           </Routes>
-
       </BrowserRouter>
+      </div>
 
   );
 

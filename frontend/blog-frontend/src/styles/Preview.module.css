@@ -1,5 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+* {
+    font-family: 'Varela Round', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .card {
-    background-color: lightgray;
-    width: 50em;
+    width: 60em;
     margin-bottom: 1em;
+    padding: 2em;
+}
+.contentwrapper {
+    display: flex;
+    flex-direction: column;
+}
+#title {
+    font-size: 2em;
+}
+#title:hover {
+    border-bottom: solid #6994fa 2px;
+    display: inline;
+}
+
+.contentwrapper div {
+    margin: 0.25em;
+}
+.actions {
+    display: flex;
+    
+}
+.actions div:hover {
+    text-decoration: underline;
+    color: #6994fa;
+    cursor: pointer;
+}
+.actions div {
+    margin: 0.25em;
+}
+#links {
+    text-decoration: none;
+    color: black;
+}
+#delete:hover {
+    color: #c40404;
+    font-weight: bold;
+}
+.actions a:visited {
+    text-decoration: none;
+    color: black;
+    
+}
+.actions p {
+    margin-right: 0.25em;
+    
 }

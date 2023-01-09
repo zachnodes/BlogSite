@@ -47,7 +47,7 @@ const Signin = () => {
                                     <label htmlFor="password">Password</label>
                                 </div>
                                 <div>
-                                    <input type="text" name='password' value={form.password} onChange={handleChange} />
+                                    <input type="password" name='password' value={form.password} onChange={handleChange} />
                                 </div>
                             </div>
                             <div className={regstyles.regbtn}>

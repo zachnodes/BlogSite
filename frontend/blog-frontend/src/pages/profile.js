@@ -3,6 +3,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import { usePostContext } from '../hooks/usePostContext';
 import Navbar from '../comps/navbar';
 import Preview from '../comps/preview';
+import profile from '../styles/Home.module.css'
 import {useParams} from 'react-router-dom'
 
 const Profile = () => {
@@ -31,26 +32,28 @@ const Profile = () => {
 
     return (
         <div>
-        <Navbar/>
-            <h1>Hello {user && user.username}</h1>
-            {
-          posts && posts.map(post => {
-            post.createdAt = new Date
-            return (
-              <div key={post._id}>
-                <Preview
-                  title={post.title}
-                  descrip={post.description}
-                  date={post.createdAt}
-                  slug={post.slug}
-                  userID={post.user_id}
-                  postID={post._id}
-                />
-              </div>
-            )
-          })
-        }
-            
+          <Navbar/>
+          <div className={profile.cardwrapper}>
+          <h1>Dashboard</h1>
+          <h2>Hello {user && user.username}</h2>
+              {
+                posts && posts.map(post => {
+                  post.createdAt = new Date
+                  return (
+                    <div key={post._id}>
+                      <Preview
+                        title={post.title}
+                        descrip={post.description}
+                        date={post.createdAt}
+                        slug={post.slug}
+                        userID={post.user_id}
+                        postID={post._id}
+                      />
+                    </div>
+                  )
+                })
+              } 
+          </div>  
         </div>
     );
 }

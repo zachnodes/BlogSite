@@ -19,22 +19,16 @@ const Navbar = () => {
         <div>
             <nav className={navbar.navbar}>
                 <div className={navbar.logoandsearch}>
-                <Link to={'/'}>
-                    <div className={navbar.logo}>Blogsite</div>
-                </Link>
-                    <div className={navbar.searchbar}>
+                <div className={navbar.logo}><Link to={'/'}>Blogsite</Link></div>
+                    {/* <div className={navbar.searchbar}>
                         <input placeholder='Search'></input>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className={navbar.createandgreeting}>
-                <Link to={'/new'}>
-                    <div className={navbar.createpost}>Create Post</div>
-                </Link>
-                <Link to={`/${signin.username}`}>
-                    <div className={navbar.createpost}>Profile</div>
-                </Link>
-                    <div className={navbar.createpost} onClick={() => logout()}>Log out</div>
+                    <div className={navbar.createpost}><Link to={'/new'}>Create</Link></div>
+                    <div className={navbar.createpost}><Link to={`/${signin.username}`}>Profile</Link></div>
+                    <div id={navbar.logout} onClick={() => logout()}>Log out</div>
                     <div className={navbar.greeting}>Hello {signin && signin.username} </div>
                 </div>
             </nav>
@@ -46,21 +40,16 @@ const Navbar = () => {
                 <nav className={navbar.navbar}>
                 
                     <div className={navbar.logoandsearch}>
-                    <Link to={'/'}>
-                        <div className={navbar.logo}>Blogsite</div>
-                    </Link>
-                        <div className={navbar.searchbar}>
+                    <div className={navbar.logo}><Link to={'/'}>Blogsite</Link></div>
+  
+                        {/* <div className={navbar.searchbar}>
                             <input placeholder='Search'></input>
-                        </div>
+                        </div> */}
                     </div>
 
                 <div className={navbar.registerandsignin}>
-                <Link to={'/register'}>
-                    <div className={navbar.register}>Register</div>
-                </Link>
-                <Link to={'/signin'}>
-                    <div className={navbar.signin}>Sign in</div>
-                </Link>
+                    <div className={navbar.register}><Link to={'/register'}>Register </Link></div>
+                    <div className={navbar.signin}><Link to={'/signin'}>Sign in</Link></div>
                 </div> 
 
             </nav>

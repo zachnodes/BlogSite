@@ -4,36 +4,53 @@
     align-items: center;
 }
 .createpost {
-    background-color: greenyellow;
-    width: 30%;
+    background-color: #6994fa;
+    width: 50%;
+    height: 100%;
     padding: 2em;
     border-radius: 5px;
-    border: solid black 1px;
+    border: solid faf8f2 1px;
+}
+.createpost label {
+    font-size: 1.125em;
 }
 .createpost input {
+    border: solid #faf8f2 2px;
+    font-size: 1.125em;
+    border-radius: 5px;
     margin-bottom: 1em;
     width: 100%;
+    height: 2.5em;
     outline: none;
 }
 .createpost textarea {
-  width: 100%;
-  height: 4em;
-  resize: vertical;
+    border: solid #faf8f2 2px;
+    font-size: 1.125em;
+    border-radius: 5px;
+    background-color: #faf8f2;
+    width: 100%;
+    height: 4em;
+    resize: vertical;
 }
 .formcont {
-    background-color: aqua;
+    background-color: #6994fa;
     width: 30%;
     padding: 2em;
     border-radius: 5px;
-    border: solid black 1px;
+    border: solid #dce5f5 2px;
 }
 .formcont input {
-    border: none;
-    border-bottom: solid black 1px;
+    font-size: 1.125em;
+    border: solid #faf8f2 2px;
+    border-radius: 5px;
     margin-bottom: 1em;
-    background-color: transparent;
+    height: 2.5em;
+    background-color: #faf8f2;
     width: 100%;
     outline: none;
+}
+.formcont label {
+    font-size: 1.25em;
 }
 .regcont {
     display: flex;
