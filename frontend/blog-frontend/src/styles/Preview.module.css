@@ -43,7 +43,6 @@
 }
 #delete:hover {
     color: #c40404;
-    font-weight: bold;
 }
 .actions a:visited {
     text-decoration: none;

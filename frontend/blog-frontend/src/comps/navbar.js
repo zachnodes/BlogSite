@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
 import {Link} from 'react-router-dom'
 import {useLogout} from '../hooks/useLogout'
@@ -8,13 +7,7 @@ import navbar from '../styles/Nav.module.css'
 const Navbar = () => {
     const {user} = useAuthContext()
     const {logout} = useLogout()
-    const [signin, setsignin] = useState(user);
-    useEffect(() => {
-        
-        setsignin(user)
-    }, [user])
-
-    if (signin) {
+    if (user) {
         return (
         <div>
             <nav className={navbar.navbar}>
@@ -27,9 +20,9 @@ const Navbar = () => {
 
                 <div className={navbar.createandgreeting}>
                     <div className={navbar.createpost}><Link to={'/new'}>Create</Link></div>
-                    <div className={navbar.createpost}><Link to={`/${signin.username}`}>Profile</Link></div>
+                    <div className={navbar.createpost}><Link to={`/${user.username}`}>Profile</Link></div>
                     <div id={navbar.logout} onClick={() => logout()}>Log out</div>
-                    <div className={navbar.greeting}>Hello {signin && signin.username} </div>
+                    <div className={navbar.greeting}>Hello {user && user.username} </div>
                 </div>
             </nav>
         </div>
