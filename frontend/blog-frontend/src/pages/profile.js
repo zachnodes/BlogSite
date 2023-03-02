@@ -38,7 +38,6 @@ const Profile = () => {
           <h2>Hello {user && user.username}</h2>
               {
                 posts && posts.map(post => {
-                  post.createdAt = new Date
                   return (
                     <div key={post._id}>
                       <Preview

@@ -3,9 +3,12 @@ import preview from '../styles/Preview.module.css'
 import {Link} from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext';
 import { usePostContext } from '../hooks/usePostContext';
+
 const Preview = ({title, descrip, date, slug, postID, userID}) => {
     const {user} = useAuthContext()
-    const {posts, dispatch} = usePostContext()
+    const {dispatch} = usePostContext()
+    const todaysDate = new Date(date).toLocaleDateString()
+    
 
     const delPosts = async () => {
         const res = await fetch('/profile/' + postID, {
@@ -27,6 +30,7 @@ const Preview = ({title, descrip, date, slug, postID, userID}) => {
         }
         
       }
+      
     
     
     
@@ -38,7 +42,7 @@ const Preview = ({title, descrip, date, slug, postID, userID}) => {
                     <Link id={preview.links} to={`/articles/${slug}`}><h2 id={preview.title}>{title}</h2></Link>
                     </div>
                     <div>
-                        <p>{date.toLocaleDateString()}</p>
+                        <p>{todaysDate}</p>
                     </div>
                     <div>
                         <p>{descrip}</p>

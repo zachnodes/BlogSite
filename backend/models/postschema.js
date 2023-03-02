@@ -13,8 +13,7 @@ const postShema = new Schema({
     content: {type: String, required: true},
     createdAt: {type: Date, default: Date.now},
     slug: {type: String, required: true, unique: true},
-    user_id: {type: String, required: true}
-    
+    user_id: {type: String, required: true},
 })
 
 postShema.pre('validate', function (next) {
@@ -22,7 +21,7 @@ postShema.pre('validate', function (next) {
         this.slug = slugify(this.title, {lower: true, strict: true})
     }
     if (this.content) {
-        dompurify.sanitize(marked.parse(this.content))
+        dompurify.sanitize((this.content))
     }
     next()
 })

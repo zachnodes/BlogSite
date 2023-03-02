@@ -6,20 +6,20 @@ import { usePostContext } from '../hooks/usePostContext';
 
 
 const Home = () => {
-    const {posts, dispatch} = usePostContext()
+  const {posts, dispatch} = usePostContext()
 
     useEffect(() => {
-        const getPosts = async () => {
-            const res = await fetch('/articles')
-            const json = await res.json()
+      const getPosts = async () => {
+        const res = await fetch('/articles')
+        const json = await res.json()
         
-            if (res.ok) {
-              dispatch({type: 'GET_POSTS', payload: json})
-            }
-        
-          }
+        if (res.ok) {
+          dispatch({type: 'GET_POSTS', payload: json})
+        }
+        console.log(json)
+      }
           
-        getPosts()
+      getPosts()
 
     }, []);
   
@@ -31,7 +31,7 @@ const Home = () => {
       <div className={home.cardwrapper}>
         {
           posts && posts.map(post => {
-            post.createdAt = new Date
+            
             return (
               <div key={post._id}>
                 <Preview

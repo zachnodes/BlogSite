@@ -8,6 +8,7 @@ import Blog from '../styles/Blog.module.css'
 const Viewpost = () => {
     const [posts, setposts] = useState([]);
     const {slug} = useParams()
+    
   
 
     const getPost = async () => {
@@ -30,19 +31,16 @@ const Viewpost = () => {
             <div >
                 {
                     posts.map((post) => {
-                        post.createdAt = new Date
+                        const todaysDate = new Date(post.createdAt).toLocaleDateString()
                         return (
                             <div className={Blog.wrapper}>
                                 <div className={Blog.content}>
-                                <div className={Blog.inner}>
-                                        <h1>{post.title} ****</h1>
-                                        <p id={Blog.dateandtitle}>{post.createdAt.toLocaleDateString()}</p>
+                                    <h1>{post.title}</h1>
+                                    <p id={Blog.dateandtitle}>{todaysDate}</p>
                                 
-                                    
-                                        <ReactMarkdown>
-                                            {post.content}
-                                        </ReactMarkdown>
-                                </div>
+                                    <div className={Blog.inner}>
+                                        <ReactMarkdown children={post.content}/> 
+                                    </div>
                                 </div>
                             </div>
                         )

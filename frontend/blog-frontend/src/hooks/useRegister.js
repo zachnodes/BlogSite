@@ -23,8 +23,6 @@ export const useRegister = () => {
         if (res.ok) {
             localStorage.setItem('user', JSON.stringify(json))
             dispatch({type: 'LOGIN', payload: json })
-
-    
         }
     }
 

@@ -1,11 +1,13 @@
 import React from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
+import { usePostContext } from '../hooks/usePostContext';
 import {Link} from 'react-router-dom'
 import {useLogout} from '../hooks/useLogout'
 import navbar from '../styles/Nav.module.css'
 
 const Navbar = () => {
     const {user} = useAuthContext()
+    const {dispatch} = usePostContext()
     const {logout} = useLogout()
     if (user) {
         return (
@@ -20,7 +22,7 @@ const Navbar = () => {
 
                 <div className={navbar.createandgreeting}>
                     <div className={navbar.createpost}><Link to={'/new'}>Create</Link></div>
-                    <div className={navbar.createpost}><Link to={`/${user.username}`}>Profile</Link></div>
+                    <div className={navbar.createpost} onClick={() => dispatch({type: 'REMOVE_POSTS'})}><Link to={`/${user.username}`}>Profile</Link></div>
                     <div id={navbar.logout} onClick={() => logout()}>Log out</div>
                     <div className={navbar.greeting}>Hello {user && user.username} </div>
                 </div>
