@@ -91,7 +91,7 @@ const Editpost = () => {
                                 <label htmlFor="description">Description</label>
                             </div>
                             <div>
-                                <textarea name="description" value={article.description} onChange={handleChange}></textarea>
+                                <textarea id={regstyles.description} name="description" value={article.description} onChange={handleChange}></textarea>
                             </div>
                         </div>
                         <div>

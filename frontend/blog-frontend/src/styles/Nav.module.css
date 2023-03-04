@@ -4,7 +4,7 @@
     height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     margin: 0 0 3em 0;
     border-bottom: solid #dce5f5 2px;
@@ -13,9 +13,8 @@
     display: flex;
     align-items: center;
     gap: 1em;
-    width: 20%;
     height: 80%;
-
+    margin-left: 10%;
 }
 .logo {
     font-size: 2em;
@@ -28,6 +27,7 @@
     text-decoration: none;
     color: #dce5f5;
 }
+
 .searchbar {
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@
     justify-content: center;
     gap: 1em;
     height: 100%;
-    width: 15em;
+    margin-right: 10%;
 }
 .registerandsignin a {
     text-decoration: none;
@@ -61,6 +61,7 @@
     padding: .75em 1em;
     border-radius: 10px;
     color: #dce5f5;
+    
 }
 .register a {
     color: #dce5f5;
@@ -74,13 +75,15 @@
 .signin a {
     color: #6994fa;
 }
+
 .createandgreeting {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80%;
-    width: 25%;
     gap: 0.5em;
+    /* background-color: aqua; */
+    margin-right: 5%;
 }
 .createpost {
     border: #dce5f5 solid 2px;
@@ -100,4 +103,120 @@
 }
 .greeting {
     color: #dce5f5
+}
+
+@media screen and (max-width: 960px) {
+    .createpost, 
+    #logout {
+        padding: .50em .50em;
+    }
+    .registerandsignin {
+        margin-right: 10%;
+    }
+    .logoandsearch {
+        margin-left: 10%;
+    }
+}
+@media screen and (min-width: 511px) and (max-width: 959px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    .createpost, 
+    #logout {
+        padding: .50em .25em;
+    }
+    .createandgreeting {
+        margin-right: 0;
+        font-size: .95em;
+    }
+    .logoandsearch {
+        margin-left: 0;
+    }
+    .registerandsignin {
+        margin-right: 10%;
+    }
+    .logoandsearch {
+        margin-left: 10%;
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 510px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    .createandgreeting {
+        font-size: .75em;
+    }
+    .registerandsignin {
+        margin-right: 7%;
+    }
+    .logoandsearch {
+        margin-left: 7%;
+    }
+    .register {
+        padding: .50em .50em;
+    }
+    .signin {
+        padding: .50em .50em;
+        
+    }
+}
+@media screen and (min-width: 330px) and (max-width: 449px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    .createandgreeting {
+        font-size: .60em;
+    }
+    .registerandsignin {
+        margin-right: 7%;
+    }
+    .logoandsearch {
+        margin-left: 7%;
+    }
+    .register {
+        padding: .50em .50em;
+    }
+    .signin {
+        padding: .50em .50em;
+        
+    }
+}
+
+@media screen and (min-width: 305px) and (max-width: 329px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    .registerandsignin {
+        margin-right: 5%;
+    }
+    .logoandsearch {
+        margin-left: 5%;
+    }
+    .register {
+        padding: .50em .50em;
+    }
+    .signin {
+        padding: .50em .50em;
+    }
+}
+@media screen and (max-width: 304px) {
+    .createpost, 
+    #logout {
+        padding: .25em .25em;
+    }
+    .logo {
+        font-size: 1.5em;
+    }
+    .registerandsignin {
+        margin-right: 2%;
+    }
+    .logoandsearch {
+        margin-left: 2%;
+    }
+    .register {
+        padding: .25em .25em;
+    }
+    .signin {
+        padding: .25em .25em;
+    }
 }

@@ -32,29 +32,29 @@ const Preview = ({title, descrip, date, slug, postID, userID}) => {
       }
       
     
-    
-    
     return (
-        <div className={preview.card}>
+        <div className={preview.cardwrapper}>
+            <div className={preview.card}>
+                
+                    <div className={preview.contentwrapper}>
+                        <div >
+                            <Link id={preview.links} to={`/articles/${slug}`}><h2 id={preview.title}>{title}</h2></Link>
+                        </div>
+                        <div>
+                            <p>{todaysDate}</p>
+                        </div>
+                        <div>
+                            <p>{descrip}</p>
+                        </div>
+                    </div>
+                    <div className={preview.actions}>
+                        <Link id={preview.links} to={`/articles/${slug}`}><div>Read More</div></Link>
+                        {userID && <Link id={preview.links} to={`/articles/edit/${slug}`}><div>Edit</div></Link>}
+                        {userID && <div id={preview.delete} onClick={() => delPosts()}>Delete</div>}
+                    </div>
+                
             
-                <div className={preview.contentwrapper}>
-                    <div >
-                    <Link id={preview.links} to={`/articles/${slug}`}><h2 id={preview.title}>{title}</h2></Link>
-                    </div>
-                    <div>
-                        <p>{todaysDate}</p>
-                    </div>
-                    <div>
-                        <p>{descrip}</p>
-                    </div>
-                </div>
-                <div className={preview.actions}>
-                    <Link id={preview.links} to={`/articles/${slug}`}><div>Read More</div></Link>
-                    {userID && <Link id={preview.links} to={`/articles/edit/${slug}`}><div>Edit</div></Link>}
-                    {userID && <div id={preview.delete} onClick={() => delPosts()}>Delete</div>}
-                </div>
-            
-        
+            </div>
         </div>
     );
 }

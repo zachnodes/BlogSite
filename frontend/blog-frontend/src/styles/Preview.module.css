@@ -5,17 +5,38 @@
     margin: 0;
     padding: 0;
 }
+.cardwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .card {
     width: 60em;
     margin-bottom: 1em;
     padding: 2em;
+    
 }
 .contentwrapper {
     display: flex;
     flex-direction: column;
 }
+@media screen and (max-width: 960px) {
+    .card {
+        width: 85%;
+    }
+}
 #title {
     font-size: 2em;
+}
+@media screen and (min-width: 376px) and (max-width: 450px) {
+    #title {
+        font-size: 1.75em;
+    }
+}
+@media screen and (max-width: 375px) {
+    #title {
+        font-size: 1.5em;
+    }
 }
 #title:hover {
     border-bottom: solid #6994fa 2px;
